@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manas Warke - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f54af5, #4bf293, #3498db, yellow);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            
+        }
+
+        .container {
+            width: 85%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding: 2rem;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile .left {
+            flex: 1;
+        }
+
+        .profile .right img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2c3e50;
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tab {
+            background: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+            flex: 1;
+        }
+
+        .tab:hover {
+            background: #084b78;
+        }
+
+        .tab-content {
+            display: none;
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 5px;
+        }
+
+        .contact p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .contact img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-container label {
+            font-weight: 600;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-container textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-container button {
+            padding: 0.8rem;
+            background: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .form-container button:hover {
+            background: #27ae60;
+        }
+
+        #response-message {
+            display: none;
+            color: #27ae60;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile .right img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+            .footer {
+  text-align: right;
+  padding: 20px;
+  background-color: #111;
+  color: white;
+}
+            
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1>&#10032; Welcome to my portfolio &#10032;</h1>
+    </header>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="section profile">
+            <div class="left">
+                <h2>Manas Pravin Warke</h2>
+                <p>&#128100; About Me: <br> Hi! I am Manas Warke, a first-year B.Tech degree student at MIT Academy of Engineering, Pune. I am skilled in both technical and non-technical areas.</p>
+            </div>
+            <div class="right">
+                <img src="C:\Users\manas\OneDrive\Pictures\Saved Pictures\Snapchat-601888516.jpg" alt="Profile Image">
+            </div>
+        </section>
+
+        <!-- Tabs Section -->
+        <section class="section">
+            <div class="tabs">
+                <div class="tab" onclick="showContent('education')"> &#128218; Education</div>
+                <div class="tab" onclick="showContent('career')">&#128221; Career</div>
+                <div class="tab" onclick="showContent('goals')"> &#127919; Goals</div>
+                <div class="tab" onclick="showContent('skills')">&#128202; Skills</div>
+                <div class="tab" onclick="showContent('projects')">&#128194; Projects</div>
+                <div class="tab" onclick="showContent('accomplishments')">&#127942; Accomplishments</div>
+                <div class="tab" onclick="showContent('testimonial')">&#128188; Testimonial</div>
+            </div>
+            <div class="tab-content" id="education">I began my academic journey at Kendriya Vidyalaya, where I successfully completed my 10th grade with a strong foundation in core subjects such as Mathematics, Science, and English. Building on this, I pursued my 12th grade at Mahatma Gandhi Vidyalaya, with a focus on the Science stream, which further deepened my interest in technology and engineering concepts.
+
+                Currently, I am pursuing a Bachelor of Technology (B.Tech) degree at MIT Academy of Engineering, Pune, a reputed institute known for its academic excellence and emphasis on innovation. As an engineering student, I am actively engaged in both theoretical learning and practical applications, working on projects and assignments that strengthen my problem-solving and technical skills.
+                I am a passionate and dedicated B.Tech student at MIT Academy of Engineering, Pune, with a strong interest in software development and embedded systems. With hands-on experience in programming languages like C, C++, Python, and HTML, I aim to build innovative and impactful solutions that bridge the gap between software and hardware.</div>
+            <div class="tab-content" id="career">Aspiring software developer with a strong passion for coding, problem-solving, and building efficient software solutions. Eager to learn and apply modern technologies to develop innovative applications. Looking for opportunities to enhance my skills and contribute to impactful projects in the field of software development.
+                I am a passionate and dedicated B.Tech student at MIT Academy of Engineering, Pune, with a strong interest in software development and embedded systems. With hands-on experience in programming languages like C, C++, Python, and HTML, I aim to build innovative and impactful solutions that bridge the gap between software and hardware.
+
+My goal is to pursue a career in the tech industry where I can continuously learn, contribute to real-world projects, and grow as a software engineer or embedded systems developer. I’m particularly interested in working on projects that involve automation, IoT, and web technologies.
+
+I am currently enhancing my skills through academic projects, self-learning, and collaboration, preparing myself for challenging opportunities in the technology sector.
+            </div>
+            <div class="tab-content" id="goals">✅ Enhance technical proficiency in programming languages such as C, C++, Python, and web development tools like HTML and CSS.<br>
+
+                🛠️ Build practical and innovative projects that integrate both software and hardware concepts, especially in automation and embedded systems.<br>
+                
+                💡 Explore and specialize in areas like software development, IoT, and system design.<br>
+                
+                🌐 Develop full-stack web development skills to create responsive and user-friendly applications.<br>
+                
+                📚 Continue learning through online courses, hands-on experience, and contributions to open-source or college projects.<br>
+                
+                🤝 Collaborate with like-minded individuals on real-world projects, hackathons, and internships.<br>
+                
+                🚀 Secure a position in a reputed tech company where I can grow as a software or embedded systems engineer.<br>
+                
+                🎓 Pursue higher education or certifications in specialized areas to stay current with the latest technologies.</div>
+            <div class="tab-content" id="skills">I have advanced proficiency in C and C++, which I use for problem-solving, algorithm development, and system-level programming. I possess an intermediate level of expertise in HTML and CSS, allowing me to build and style responsive web pages. Additionally, I am at the beginner level in Python and actively learning to expand my capabilities in scripting and application development.<br>
+
+                1. HTML  (Intermediate)<br>2. CSS  (Intermediate)<br>3. Python  (Beginner)<br>4. C and C++  (Advance)</div>
+            <div class="tab-content" id="projects">🚗 Automatic Car Parking Gate System (KiCad Project).<br>🧮 Basic Calculator.<br># Library management system.<br># Student record.<br># Restaurant billing system.<br>📋 Student Marks Record System etc.</div>
+            <div class="tab-content" id="accomplishments">Successfully executed programs in C, C++, Python, and HTML.<br>Lab Work & Experiments – Gaining hands-on experience in:
+
+                Physics/Chemistry labs
+                
+                Basic electronics/circuit labs
+                
+                Computer programming labs
+                
+                Mini Projects – Completing small-scale projects like:
+                
+                Simple calculator/quiz game in programming
+                
+                Basic circuit designs (LED projects, sensors)
+                
+                CAD models (if in Mechanical/Civil engineering)
+                
+                Workshops & Certifications – Attending:
+                
+                Coding workshops (Python, Web Dev basics)
+                
+                Arduino/Robotics workshops
+                
+                Soft skills/career development sessions</div>
+            <div class="tab-content" id="testimonial">"MANAS PRAVIN WARKE has consistently demonstrated a strong passion for software development, excelling in C, C++, Python, and HTML. Their problem-solving ability and logical thinking make them a good programmer."<br> By Mr.Pranay Badhe (software engineer)</div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section class="section">
+            <h2>&#128220; Certificates</h2>
+            <p>These are some of my Certificates. I am good in both software and electronics. I have completed all these courses and upgraded my skills and knowledge.</p>
+            <p>&#10148; python essentials 1 course by cisco networking Academy.</p>
+            <img src="C:\Users\manas\OneDrive\Pictures\Screenshots\Screenshot 2025-04-05 181022.png" type="application/pdf" width="70%" height="400px">
+                <P>&#10148; python essentials 2 course by cisco networking Academy.</P>
+                <img src="C:\Users\manas\OneDrive\Pictures\Screenshots\Screenshot 2025-04-05 181653.png" type="application/pdf" width="70%" height="400px">
+                    <p>&#10148; Nasscom course offered by ministry of electronics and information technology.</p>
+                    <img src="C:\Users\manas\OneDrive\Pictures\Screenshots\Screenshot 2025-04-05 181653.png" type="application/pdf" width="70%" height="400px">
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact">
+            <h2>&#9742; Contact Me</h2>
+            <p><img src="phone.png" alt="Phone"> Contact No: 8669148XXX</p>
+            <p><img src="whatsapp-brands.svg" alt="WhatsApp"> WhatsApp: 8275282XXX</p>
+            <p><img src="gmail.png" alt="Email"> Email: <a href="mailto:manaswarke2005@gmail.com">manaswarke2006@gmail.com</a></p>
+            <p><img src="linkedin.png" alt="LinkedIn"> LinkedIn: <a href="#">MANAS WARKE </a></p>
+        </section>
+
+        <!-- Query Form Section -->
+        <section class="section form-container">
+            <h2>&#128161; Have Any Queries?</h2>
+            <form id="queryForm" onsubmit="submitForm(event)">
+                <label for="query">Query:</label>
+                <textarea id="query" rows="5" required></textarea>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="response-message">Your response has been submitted!</div>
+        </section>
+    </div>
+
+    <script>
+        function showContent(id) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            document.getElementById('response-message').style.display = 'block';
+            document.getElementById('queryForm').reset();
+            setTimeout(() => {
+                document.getElementById('response-message').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    <footer>
+        <p>&copy; MANAS WARKE. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
